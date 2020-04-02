@@ -25,7 +25,7 @@ describe('#add', function() {
         throw err;
       }
       fs.writeFile(
-        testDir + '/s0/s1/bitcore-node-innova.json',
+        testDir + '/s0/s1/bitcore-node.json',
         JSON.stringify(startConfig),
         function(err) {
           if (err) {
@@ -90,12 +90,12 @@ describe('#add', function() {
       });
     });
 
-    it('will update bitcore-node-innova.json services', function(done) {
+    it('will update bitcore-node.json services', function(done) {
       var callCount = 0;
       var oldPackage = {
         dependencies: {
-          'bitcore-lib-innova': '^v0.13.17',
-          'bitcore-node-innova': '^v0.2.0'
+          'bitcore-lib': '^v0.13.17',
+          'bitcore-node': '^v0.2.0'
         }
       };
       var spawn = sinon.stub().returns({
@@ -130,7 +130,7 @@ describe('#add', function() {
         services: ['a', 'b', 'c']
       }, function(err) {
         should.not.exist(err);
-        var configPath = path.resolve(testDir, 's0/s1/bitcore-node-innova.json');
+        var configPath = path.resolve(testDir, 's0/s1/bitcore-node.json');
         var config = JSON.parse(fs.readFileSync(configPath));
         config.services.should.deep.equal(['a','b','c']);
         done();

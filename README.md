@@ -1,12 +1,12 @@
 Bitcore Node Innova
 ============
 
-A Innova full node for building applications and services with Node.js. A node is extensible and can be configured to run additional services. At the minimum a node has an interface to [Innova Core v0.12.1.x](https://github.com/innovacoin/innova/tree/v0.12.1.x) for more advanced address queries. Additional services can be enabled to make a node more useful such as exposing new APIs, running a block explorer and wallet service.
+A Innova full node for building applications and services with Node.js. A node is extensible and can be configured to run additional services. At the minimum a node has an interface to [Innova Core v0.12.1.x](https://github.com/MoneyByte/moneybyte/tree/v0.12.1.x) for more advanced address queries. Additional services can be enabled to make a node more useful such as exposing new APIs, running a block explorer and wallet service.
 
 ## Install
 
 ```bash
-npm install -g bitcore-node-innova
+npm install -g bitcore-node
 ```
 
 ## Prerequisites
@@ -22,16 +22,16 @@ npm install -g bitcore-node-innova
 Bitcore includes a Command Line Interface (CLI) for managing, configuring and interfacing with your Bitcore Node.
 
 ```bash
-bitcore-node-innova create -d <innova-data-dir> mynode
+bitcore-node create -d <moneybyte-data-dir> mynode
 cd mynode
-bitcore-node-innova install <service>
-bitcore-node-innova install https://github.com/yourname/helloworld
-bitcore-node-innova start
+bitcore-node install <service>
+bitcore-node install https://github.com/yourname/helloworld
+bitcore-node start
 ```
 
 This will create a directory with configuration files for your node and install the necessary dependencies.
 
-Please note that [Innova Core v0.12.1.x](https://github.com/innovacoin/innova/tree/v0.12.1.x) will be downloaded automatically. Once completed the innovad binary should be placed into the &lt;innova-data-dir&gt; folder specified during node creation.
+Please note that [Innova Core v0.12.1.x](https://github.com/MoneyByte/moneybyte/tree/v0.12.1.x) will be downloaded automatically. Once completed the moneybyted binary should be placed into the &lt;moneybyte-data-dir&gt; folder specified during node creation.
 
 For more information about (and developing) services, please see the [Service Documentation](docs/services.md).
 
@@ -39,9 +39,9 @@ For more information about (and developing) services, please see the [Service Do
 
 There are several add-on services available to extend the functionality of Bitcore:
 
-- [Insight API](https://github.com/innovacoin/insight-api-innova/tree/master)
-- [Insight UI](https://github.com/innovacoin/insight-ui-innova/tree/master)
-- [Bitcore Wallet Service](https://github.com/innovacoin/bitcore-wallet-service/tree/master)
+- [Insight API](https://github.com/MoneyByte/insight-api/tree/master)
+- [Insight UI](https://github.com/MoneyByte/insight-ui/tree/master)
+- [Bitcore Wallet Service](https://github.com/MoneyByte/bitcore-wallet-service/tree/master)
 
 ## Documentation
 
@@ -60,7 +60,7 @@ Please send pull requests for bug fixes, code optimization, and ideas for improv
 
 ## License
 
-Code released under [the MIT license](https://github.com/bitpay/bitcore-node-innova/blob/master/LICENSE).
+Code released under [the MIT license](https://github.com/bitpay/bitcore-node/blob/master/LICENSE).
 
 Copyright 2013-2015 BitPay, Inc.
 

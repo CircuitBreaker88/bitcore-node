@@ -10,11 +10,11 @@ nvm install v4
 
 ## Fork and Download Repositories
 
-To develop bitcore-node-innova:
+To develop bitcore-node:
 
 ```bash
 cd ~
-git clone git@github.com:<yourusername>/bitcore-node-innova.git
+git clone git@github.com:<yourusername>/bitcore-node.git
 git clone git@github.com:<yourusername>/bitcore-lib.git
 ```
 
@@ -48,19 +48,19 @@ brew install zeromq
 ```bash
 cd bitcore-lib
 npm install
-cd ../bitcore-node-innova
+cd ../bitcore-node
 npm install
 ```
 **Note**: If you get a message about not being able to download bitcoin distribution, you'll need to compile bitcoind from source, and setup your configuration to use that version.
 
 
-We now will setup symlinks in `bitcore-node-innova` *(repeat this for any other modules you're planning on developing)*:
+We now will setup symlinks in `bitcore-node` *(repeat this for any other modules you're planning on developing)*:
 ```bash
 cd node_modules
 rm -rf bitcore-lib
 ln -s ~/bitcore-lib
-rm -rf bitcoind-rpc-innova
-ln -s ~/bitcoind-rpc-innova
+rm -rf bitcoind-rpc
+ln -s ~/bitcoind-rpc
 ```
 
 And if you're compiling or developing bitcoin:
@@ -78,7 +78,7 @@ npm install mocha -g
 
 To run all test suites:
 ```bash
-cd bitcore-node-innova
+cd bitcore-node
 npm run regtest
 npm run test
 ```
@@ -102,11 +102,11 @@ cd ~
 mkdir devnode
 cd devnode
 mkdir node_modules
-touch bitcore-node-innova.json
+touch bitcore-node.json
 touch package.json
 ```
 
-Edit `bitcore-node-innova.json` with something similar to:
+Edit `bitcore-node.json` with something similar to:
 ```json
 {
   "network": "livenet",
@@ -136,7 +136,7 @@ Setup symlinks for all of the services and dependencies:
 ```bash
 cd node_modules
 ln -s ~/bitcore-lib
-ln -s ~/bitcore-node-innova
+ln -s ~/bitcore-node
 ln -s ~/insight-api
 ln -s ~/insight-ui
 ```
@@ -158,5 +158,5 @@ rpcpassword=local321
 
 From within the `devnode` directory with the configuration file, start the node:
 ```bash
-../bitcore-node-innova/bin/bitcore-node-innova start
+../bitcore-node/bin/bitcore-node start
 ```

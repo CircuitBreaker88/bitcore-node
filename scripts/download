@@ -6,7 +6,7 @@ root_dir="${HOME}/.bitcore"
 platform=`uname -a | awk '{print tolower($1)}'`
 arch=`uname -m`
 version="0.12.2"
-url="https://bamboo.innova.tech/browse/DASHL-REL-13/artifact/JOB1/gitian-linux-innova-dist"
+url="https://bamboo.moneybyte.tech/browse/DASHL-REL-13/artifact/JOB1/gitian-linux-dist"
 
 if [ "${platform}" == "linux" ]; then
     if [ "${arch}" == "x86_64" ]; then
@@ -31,7 +31,7 @@ download_bitcoind() {
 
     cd "${root_dir}/data"
 
-    echo "Downloading innova: ${binary_url}"
+    echo "Downloading moneybyte: ${binary_url}"
 
     is_curl=true
     if hash curl 2>/dev/null; then
@@ -50,10 +50,10 @@ download_bitcoind() {
             wget $shasums_url
         fi
         if test -e "${tarball_name}"; then
-            echo "Unpacking innova distribution"
+            echo "Unpacking moneybyte distribution"
             tar -xvzf $tarball_name
             if test $? -eq 0; then
-                ln -sf "dashcore-${version}/bin/innovad"
+                ln -sf "dashcore-${version}/bin/moneybyted"
                 return;
             fi
         fi
@@ -63,7 +63,7 @@ download_bitcoind() {
 }
 
 verify_download() {
-    echo "Verifying signatures of innova download"
+    echo "Verifying signatures of moneybyte download"
     gpg --verify "${root_dir}/bin/SHA256SUMS.asc"
 
     if hash shasum 2>/dev/null; then
